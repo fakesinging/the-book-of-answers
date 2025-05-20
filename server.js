@@ -3,7 +3,8 @@ import path from 'path'
 import { fileURLToPath } from 'url';
 const app = express()
 
-import answers from "./book_of_answers.json" assert { type: "json"}
+import { readFileSync } from "fs";
+const answers = JSON.parse(readFileSync(new URL("./book_of_answers.json", import.meta.url)));
 
 console.log(answers)
 
